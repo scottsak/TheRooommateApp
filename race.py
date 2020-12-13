@@ -1,44 +1,34 @@
 import pygame
-import sys
 
-class Race(object):
-    def __init__(self):
-        pygame.init()
-        res = (720,720)
-        self.screen = pygame.display.set_mode(res)
-        self.height= self.screen.get_height()
-        self.width = self.screen.get_width()
-        self.players = []
-   
-    def startRace():
-        while True:
-            for ev in pygame.event.get():
-                if ev.type == pygame.QUIT:
-                    pygame.quit()
-                if ev.type == pygame.MOUSEBUTTONDOWN:
-                    if self.width/2 <= mouse[0] <= self.width/2+140 and self.height/2 <=mouse[1] <= self.height/2+40:
-                        pygame.quit()
+#setup display
+pygame.init()
+WIDTH, HEIGHT= 500,500
 
-            self.screen.fill((255,255,255))
+#creates window
+win = pygame.display.set_mode((WIDTH,HEIGHT))
+pygame.display.set_caption("Who Decides?")
+FPS = 60
+clock = pygame.time.Clock()
 
-            mouse = pygame.mouse.get_pos()
-            # if mouse is hovered on a button it 
-            # changes to lighter shade  
-            if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
-                pygame.draw.rect(screen,color_light,[width/2,height/2,140,40]) 
-                
-            else: 
-                pygame.draw.rect(screen,color_dark,[width/2,height/2,140,40]) 
-            
-            # superimposing the text onto our button 
-            screen.blit(text , (width/2+50,height/2)) 
-            pygame.display.update()
+#loads images
+images = []
+for i in range(2):
+    player = pygame.image.load("player+"+str(i)+".png")
+    images.append()
 
-    #creates players
-    def createPlayer(self,player):
-        self.players.add(player)
+#keeps the game going
+run = True
+while run:
+    clock.tick(FPS)
+    win.fill(WHITE)
+    win.blitz(images[0],(150,100))
+    pygame.display.update()
 
-    
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            pos = pygame.mouse.get_pos()
 
-race = Race()
-race.startRace
+
+pygame.quit()
