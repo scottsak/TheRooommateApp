@@ -1,16 +1,18 @@
 import pygame
 import sys
 
-class Race(object):
+
+
+class Menu(object):
     def __init__(self):
         pygame.init()
         res = (720,720)
+        print("hello")
         self.screen = pygame.display.set_mode(res)
         self.height= self.screen.get_height()
         self.width = self.screen.get_width()
-        self.players = []
-   
-    def startRace():
+
+    def getMenu(self):
         while True:
             for ev in pygame.event.get():
                 if ev.type == pygame.QUIT:
@@ -22,23 +24,7 @@ class Race(object):
             self.screen.fill((255,255,255))
 
             mouse = pygame.mouse.get_pos()
-            # if mouse is hovered on a button it 
-            # changes to lighter shade  
-            if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
-                pygame.draw.rect(screen,color_light,[width/2,height/2,140,40]) 
-                
-            else: 
-                pygame.draw.rect(screen,color_dark,[width/2,height/2,140,40]) 
-            
-            # superimposing the text onto our button 
-            screen.blit(text , (width/2+50,height/2)) 
             pygame.display.update()
-
-    #creates players
-    def createPlayer(self,player):
-        self.players.add(player)
-
-    
-
-race = Race()
-race.startRace
+              
+menu = Menu()
+menu.getMenu()     
