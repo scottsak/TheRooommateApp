@@ -19,7 +19,7 @@ for i in range(2):
     images.append(player)
 
 #creates buttons
-startButton = pygame.Rect(100,100,50,50)
+startButton = pygame.Rect(500,500,50,50)
 
 
 #starts race
@@ -37,7 +37,7 @@ while run:
     clock.tick(FPS)
     win.fill(GREEN)
     win.blit(images[0],(p1x,p2y))
-    pygame.draw.rect(win, (200,0,0),startButton)
+    pygame.draw.rect(win, (200,0,200),startButton)
     pygame.display.update()
 
     for event in pygame.event.get():
