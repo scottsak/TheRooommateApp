@@ -22,13 +22,7 @@ for i in range(2):
 startButton = pygame.Rect(500,500,50,50)
 
 
-#starts race
-def startRace():
-    global p1x
-    while (p1x<100):
-        p1x+=1
-        win.blit(images[0],(p1x,p2y))
-        pygame.display.flip()
+
 
 #keeps the game going
 run = True
@@ -48,7 +42,11 @@ while run:
 
             #will start race
             if startButton.collidepoint(pos):
-                startRace()
+                while(p1x<500):
+                    p1x+=1
+                    win.fill(GREEN)
+                    win.blit(images[0],(p1x,p2y))
+                    pygame.display.update()
 
 
 pygame.quit()
