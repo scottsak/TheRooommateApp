@@ -27,23 +27,7 @@ finishline = pygame.transform.scale(finishline,(200,1000))
 #creates buttons
 startButton = pygame.Rect(500,500,50,50)
 
-#creates finish line
-# finishlineY = 0
-# def createFinishLine():
-#     global win
-#     global HEIGHT
-#     white=True
-#     global finishlineY
-#     i=0
-#     for i in range(HEIGHT):
-#         if white:
-#             pygame.draw.rect(win, (255,255,255), pygame.Rect(500,finishlineY,50,50))
-#             white = False
-#         else:
-#             pygame.draw.rect(win,(0,0,0),pygame.Rect(500,finishlineY,50,50))
-#             white = True
-#         i +=50
-#         finishlineY +=50
+#creates background
 def createBackground():
     global p1x, p2x
     win.fill(GREEN)
